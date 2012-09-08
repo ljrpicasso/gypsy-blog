@@ -19,9 +19,12 @@ html
       .container
         .content
           .row
-            .span12
-              = render 'layouts/messages'
+            .span8
+              /= render 'layouts/messages'
               = yield
+            .span1
+            .span3
+              = render 'layouts/sidebar'
           footer
       /! ! end of .container
     /! ! end of #main
