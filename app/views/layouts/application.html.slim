@@ -20,11 +20,11 @@ html
         .content
           .row
             .span8
-              /= render 'layouts/messages'
+              = render 'layouts/messages'
               = yield
-            .span1
-            .span3
-              = render 'layouts/sidebar'
+            .span4
+              div id="well"
+                = render 'layouts/sidebar'
           footer
       /! ! end of .container
     /! ! end of #main

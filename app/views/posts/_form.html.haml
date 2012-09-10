@@ -1,20 +1,11 @@
-= form_for @post, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :title, :class => 'control-label'
-    .controls
-      = f.text_field :title, :class => 'text_field'
-  .control-group
-    = f.label :body, :class => 'control-label'
-    .controls
-      = f.text_area :body, :class => 'text_area'
-  .control-group
-    = f.label :publish_date, :class => 'control-label'
-    .controls
-      = f.date_select :publish_date, :class => 'date_select'
-  .control-group
-    = f.label :categories, :class => 'control-label'
-    .controls
-      = f.association :categories, :as => :check_boxes
+= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f|
+
+  .form-inputs
+    = f.input :title, :required => true 
+    = f.input :body, :as => :text, :required => false 
+    = f.input :publish_date, :as => :date, :required => true 
+    = f.association :categories, :as => :check_boxes
+
   .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
+    = f.button :submit, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn'
