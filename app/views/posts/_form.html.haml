@@ -2,7 +2,7 @@
 
   .form-inputs
     = f.input :title, :required => true 
-    = f.input :body, :as => :text, :required => false 
+    = f.input :body, :required => false, :input_html => { :rows => 5 } 
     = f.input :publish_date, :as => :date, :required => true 
     = f.association :categories, :as => :check_boxes
 
