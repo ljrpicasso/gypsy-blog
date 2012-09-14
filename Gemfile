@@ -3,6 +3,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 gem 'activeadmin'
+gem 'paul_revere'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

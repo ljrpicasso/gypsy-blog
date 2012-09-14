@@ -20,7 +20,9 @@ html
         .content
           .row
             .span8
-              = render 'layouts/messages'
+              div id="well"
+                = render 'announcements/announcements_for_all'
+                = render 'layouts/messages'
               = yield
             .span4
               div id="well"
