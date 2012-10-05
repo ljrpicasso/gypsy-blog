@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  body         :text
+#  publish_date :date
+#  user_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Post < ActiveRecord::Base
   attr_accessible :body, :publish_date, :title, :category_ids
   validates_presence_of :body, :publish_date, :title, :user_id
