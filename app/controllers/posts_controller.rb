@@ -8,12 +8,6 @@ class PostsController < ApplicationController
     @posts = @posts.by_user_id(params[:user]) if params[:user].present?
     @posts = @posts.by_category_id(params[:cat]) if params[:cat].present?
 
-    recipe_dir = "/public/recipes"
-    @recipes = Dir.glob("#{Rails.root}#{recipe_dir}/*.pdf");
-    @recipes_names = @recipes.map {|n| File.basename(n,".pdf") }
-    @recipes_urls = @recipes.map { |p| "/recipes/#{URI.encode(File.basename(p))}" }
-    @recipes = @recipes_names.zip @recipes_urls
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

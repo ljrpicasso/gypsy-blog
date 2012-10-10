@@ -42,7 +42,7 @@ The application is configured to send email using a Gmail account. In addition, 
 
 h2. Getting Started
 
-yet to come...
+* Create public/recipes directory, and fill with your PDF recipe files
 
 h2. Documentation and Support
 
@@ -71,6 +71,7 @@ h2. Credits
 
 * RailsApps composer
 * John Ash and his fine blog tutorial
+* @mathiasx for his help with the recipes
 
 h2. License
 
