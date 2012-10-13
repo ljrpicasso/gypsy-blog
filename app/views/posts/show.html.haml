@@ -9,7 +9,6 @@
         = @post.title
     .well
       = @post.body
-    .br
     .form-actions
       = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'btn btn-success'
       - if current_user && (current_user.has_role?(:admin) || current_user.id==@post.user_id)
@@ -17,14 +16,13 @@
         = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
   .span3
     .well
-      .h1
-        Author
-      = @post.user.name
-      .h2
-        Publish Date
-      = @post.publish_date
-      .h3
-        Categories
+      %p
+        %b Author
+        = @post.user.name
+      %p
+        %b Publish Date
+        = @post.publish_date
+      %b Categories:
       .ul
         - @post.categories.each do |cat|
           .li
