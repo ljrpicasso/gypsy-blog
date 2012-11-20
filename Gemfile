@@ -4,6 +4,9 @@ gem 'sqlite3'
 
 gem 'activeadmin'
 gem 'paul_revere'
+gem 'irwi', :git => 'git://github.com/alno/irwi.git'
+# gem 'RedCloth'
+gem 'bluecloth', '>= 2.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
