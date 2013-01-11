@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require bootstrap
 //= require announcements
 //= require_tree .

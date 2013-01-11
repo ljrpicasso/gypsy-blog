@@ -11,22 +11,13 @@ html
     = csrf_meta_tags
     = yield(:head)
   body
-    header.navbar.navbar-fixed-top
-      nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
-    #main role="main"
-      .container
-        .content
-          .row
-            .span8
-              div id="well"
-                = render 'announcements/announcements_for_all'
-                = render 'layouts/messages'
-              = yield
-            .span4
-              div id="well"
-                = render 'layouts/sidebar'
-          footer
-      /! ! end of .container
-    /! ! end of #main
+    = render 'layouts/navigation'
+    .container
+      .content
+        .row
+          .eight.columns
+            = render 'announcements/announcements_for_all'
+            = render 'layouts/messages'
+            = yield
+          .four.columns
+            = render 'layouts/sidebar'
