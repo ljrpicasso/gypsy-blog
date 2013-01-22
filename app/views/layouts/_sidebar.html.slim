@@ -2,8 +2,9 @@ div id="well"
   | Search the site:
   form id="navbar-search pull-left"
     input type="text" class="search-query" placeholder="Search"
-  | Recipes
-  ul
-    - @recipes.each do |recipe, url|
-      li
-        | #{link_to recipe, url}
+  | <b>Recipes</b>
+  content
+    ul
+      - @recipes.each do |recipe, url|
+        li
+          | #{link_to recipe, url}

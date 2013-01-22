@@ -1,31 +1,32 @@
 - model_class = Post
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human
+  %h3=t '.title', :default => @post.title
 
 .row
-  .span5
-    .well
-      .lead
-        = @post.title
-    .well
+  .eight.columns
+    .content  
       = @post.body
-    .form-actions
-      = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'btn btn-success'
+    %p
+    %ul.button-group.radius
+      %li 
+        = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'tiny button'
       - if current_user && (current_user.has_role?(:admin) || current_user.id==@post.user_id)
-        = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(@post), :class => 'btn btn-info'
-        = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-  .span3
-    .well
-      %p
-        %b Author
-        = @post.user.name
-      %p
-        %b Publish Date
-        = @post.publish_date
+        %li
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(@post), :class => 'tiny button'
+        %li
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'tiny button alert'
+  .four.columns
+    %p
+      %b Author <br>
+      = @post.user.name
+    %p
+      %b Publish Date <br>
+      = @post.publish_date
+    %p
       %b Categories:
       .ul
         - @post.categories.each do |cat|
           .li
             .icon-check
-            = cat.name
+              = cat.name
 

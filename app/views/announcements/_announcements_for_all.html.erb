@@ -1,5 +1,5 @@
 <% if current_announcement.exists? && !announcement_hidden?(current_announcement) %>
-  <div id="announcement">
+  <div id="announcement" class="alert-box secondary">
     <span><%= current_announcement.body.html_safe %></span>
     <span class="hide">
       <%= link_to_function "hide", "hideAnnouncement('announcement_#{current_announcement.created_at}')" %>
